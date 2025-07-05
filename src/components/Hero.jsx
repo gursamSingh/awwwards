@@ -21,7 +21,7 @@ const Hero = () => {
     if (loadedVideo === totalVideosToBePlayed - 1) {
       setIsLoading(false);
     }
-  }, loadedVideo);
+  }, [loadedVideo]);
 
   // Animation-1- Video scale/change on click
   useGSAP(
