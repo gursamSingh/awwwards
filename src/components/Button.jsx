@@ -1,16 +1,20 @@
 import React from "react";
 
-const Button = (props) => {
+import clsx from "clsx";
+
+const Button = ({ title, leftIcon, containerClass, rightIcon, id }) => {
   return (
     <button
-      id={props.id}
-      className={`group relative z-10 w-fit flex items-center gap-2 cursor-pointer overflow-hidden rounded-full bg-violet-50 px-7 py-3 text-black ${props.containerClass}`}
+      id={id}
+      className={clsx(
+        `group relative z-10 w-fit flex items-center gap-2 cursor-pointer overflow-hidden rounded-full bg-violet-50 px-7 py-3 text-black ${containerClass}`
+      )}
     >
-      {props.leftIcon}
+      {leftIcon}
       <span className="relative inline-flex  overflow-hidden font-general text-xs uppercase">
-        <div>{props.title}</div>
+        <div>{title}</div>
       </span>
-      {props.rightIcon}
+      {rightIcon}
     </button>
   );
 };
