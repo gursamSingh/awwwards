@@ -10,19 +10,19 @@ const About = () => {
   useGSAP(() => {
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
-        trigger: "#clip",
-        start: "center center",
-        end: "+=800 center",
-        scrub: 0.5,
+        trigger: "#clip", // Element that triggers the scroll animation
+        start: "center center", // Start animation when #clip is in the center of viewport
+        end: "+=800 center", // End animation 800px later
+        scrub: 0.5, // Makes the animation follow the scroll
         pin: true,
-        pinSpacing: true,
+        pinSpacing: true, // Keeps space for pinned element so it doesn’t overlap others
       },
     });
 
     clipAnimation.to(".mask-clip-path", {
-      width: "100vw",
-      height: "100vh",
-      borderRadius: 0,
+      width: "100vw", // Animate to full width
+      height: "100vh", // Animate to full height
+      borderRadius: 0, // Remove any border-radius for full rectangular shap
     });
   });
   return (
